@@ -30,7 +30,7 @@ User.init({
         modelName: "User"
     })
 
-async function syncTable() {
+async function syncTable(): Promise<void> {
     await User.sync({ alter: true })
 }
 syncTable()
