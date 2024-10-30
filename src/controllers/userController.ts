@@ -14,10 +14,10 @@ export async function login(req: Request, res: Response) {
       const jwtPayload = { email, admin: user.admin, firstName: user.firstName }
       const token = jwt.sign(jwtPayload, jwtSecret)
       res.set('Authorization', token)
-      res.json({ status: "logging in success" }).end()
+      res.status(200).end()
     }
     else {
-      res.json({ status: "username and password combination do not match" }).end()
+      res.status(406).end()
     }
   }
 }
@@ -30,15 +30,15 @@ export async function register(req: Request, res: Response) {
       })
       const jwtPayload = { email: user.email, admin: false, firstName: user.firstName }
       const token = jwt.sign(jwtPayload, jwtSecret)
-      res.set('Authorization', token).end()
+      res.status(201).set('Authorization', token).end()
 
     } catch (err) {
       console.log("something went wrong saving this user", err)
-      res.status(500).json({ err: "something went wrong" })
+      res.status(500).end()
     }
   }
   else {
-    res.status(406).json({ err: "body does not meet requirements" })
+    res.status(406).end()
   }
 }
 
@@ -47,15 +47,14 @@ export function checkJWT(req: Request, res: Response) {
   if (header) {
     try {
       const result = jwt.verify(header, jwtSecret);
-      res.json({ result })
+      res.status(200).end()
     }
     catch (err) {
       console.log(err)
-      res.json({ result: "failed" })
+      res.status(500).end()
     }
   }
   else {
-    res.json({ result: "failed" })
+    res.status(406).end()
   }
-
 }
