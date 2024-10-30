@@ -17,10 +17,14 @@ export async function login(req: Request, res: Response) {
       res.status(200).end()
     }
     else {
-      res.status(406).end()
+      res.status(401).end()
     }
   }
+  else {
+    res.status(404).end()
+  }
 }
+
 export async function register(req: Request, res: Response) {
   const user = checkValidData(req.body)
   if (user) {
