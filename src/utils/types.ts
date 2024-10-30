@@ -1,11 +1,9 @@
 export type UserType = {
-    firstName: string,
-    lastName: string,
-    email: string,
-    password: string,
+  id?: number
+  firstName: string,
+  lastName: string,
+  email: string,
+  password: string,
+  admin?: boolean
 }
 
-export interface UserTypeComplete extends UserType {
-    id: number,
-    admin: boolean
-}

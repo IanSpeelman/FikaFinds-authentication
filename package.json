@@ -1,28 +1,31 @@
 {
-    "name": "fikafinds-authentication",
-    "version": "1.0.0",
-    "type": "module",
-    "main": "src/index.ts",
-    "scripts": {
-        "dev": "nodemon",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "",
-    "license": "ISC",
-    "description": "",
-    "dependencies": {
-        "body-parser": "^1.20.3",
-        "express": "^4.21.1",
-        "pg": "^8.13.1",
-        "pg-hstore": "^2.3.4",
-        "sequelize": "^6.37.5"
-    },
-    "devDependencies": {
-        "@types/express": "^5.0.0",
-        "@types/node": "^22.8.1",
-        "@types/sequelize": "^4.28.20",
-        "nodemon": "^3.1.7",
-        "ts-node": "^10.9.2",
-        "typescript": "^5.6.3"
-    }
+  "name": "fikafinds-authentication",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "nodemon --exec npx tsx src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.3",
+    "express": "^4.21.1",
+    "pg": "^8.13.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.5",
+    "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.8.1",
+    "@types/sequelize": "^4.28.20",
+    "nodemon": "^3.1.7",
+    "typescript": "^5.6.3"
+  }
 }

@@ -1,8 +1,8 @@
-const { Sequelize } = require('sequelize')
-const dbUser = process.env.DBUSER
-const dbPass = process.env.DBPASS
-const dbName = process.env.DBUSERS
-const dbHost = process.env.USERSDBHOST
+import { Sequelize } from "sequelize"
+const dbUser = process.env.DBUSER || "user"
+const dbPass = process.env.DBPASS || "pass"
+const dbName = process.env.DBUSERS || "users"
+const dbHost = process.env.USERSDBHOST || "localhost"
 
 export const sequelize = new Sequelize(dbName, dbUser, dbPass, {
     dialect: "postgres",
